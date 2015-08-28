@@ -1,0 +1,5 @@
+x = []
+i = 0
+while i < 9
+	x.append(i)
+	i ++

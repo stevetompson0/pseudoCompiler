@@ -1,0 +1,6 @@
+function TREE_INSERT(tree, val)
+    if tree.val == None
+        print("yes")
+
+elem = [12, 5, 9, 2, 18]
+btree = BinarySearchTree()

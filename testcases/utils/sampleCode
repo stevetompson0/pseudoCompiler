@@ -1,0 +1,56 @@
+function Dijsktra(graphFromParam, source)
+    dist = {}
+    prev = {}
+    nodes = graphFromParam.V #set
+    S = []
+    Q = MinPriorityQueue()
+
+    dist[source] = 0
+    for v in nodes
+        if v != source
+            dist[v] = INFINITE
+            v.color = 'WHITE'
+        else
+            v.color = 'RED'
+        prev[v] = None
+        Q.add_with_priority(v, dist[v])
+
+
+    while Q
+        minVertex = Q.extract_min()
+        for v in graphFromParam.getAdjVertices(minVertex)
+            alt = dist[minVertex] + graphFromParam.getEdge(minVertex, v).weight
+            if alt < dist[v]
+                v.color = 'YELLOW'
+                dist[v] = alt
+                prev[v] = minVertex
+                Q.change_priority(v, alt)
+        S.append(minVertex)
+
+    return prev
+
+function SP(prev, dest)
+    pathList = []
+    v = dest
+    while v
+        pathList.insert(0,str(v))
+        graph.getVertex(v).color = 'GREEN'
+        v2 = v
+        v = prev[v]
+        if v is not None
+            graph.getEdge(v, v2).color = 'RED'
+    return str(pathList)
+
+
+
+vertices = ('s', 'r', 'v', 'w', 't', 'x', 'u', 'y')
+edges = (('x', 'y'), ('x', 'r'), ('x', 'u'), ('r', 's'), ('s', 'w'), ('t', 'r'), ('u', 'w'), ('v', 'w'), ('y', 'v'), ('t', 'x'))
+weights = (1,2,3,4,5,10,7,8,4,2)
+
+graph = Graph(vertices, edges, weights)
+
+prev = Dijsktra(graph,'t')
+
+#prev = {'x': 't', 'y': 'x', 't': None, 'u': 'x', 'v': 'y', 'w': 'u', 'r': 'x', 's': 'r'}
+
+path = SP(prev,'w')

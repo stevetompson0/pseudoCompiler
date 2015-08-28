@@ -1,0 +1,18 @@
+This folder is used to store user input source code and compilation output files.
+
+Folder Hierarchy:
+
+Folder     Different User      Project folder      folder content
+                               YYYYMMDDHHMMSS...
+
+                              |---project 1
+                              |              |- source.psc
+      |----User ID 1(folder) -|---project 2 -|- output.json
+      |                       |              |- exception.txt
+      |                       |---project 3
+      |
+user -|----User ID 2(folder)
+      |
+      |
+      |
+      |----User ID 3(folder)

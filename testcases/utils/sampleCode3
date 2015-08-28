@@ -1,0 +1,6 @@
+vertices = ('s', 'r', 'v', 'w', 't', 'x', 'u', 'y')
+edges = (('x', 'y'), ('x', 'r'), ('x', 'u'), ('r', 's'), ('s', 'w'), ('t', 'r'), ('u', 'w'), ('v', 'w'), ('y', 'v'), ('t', 'x'))
+weights = (1,2,3,4,5,10,7,8,4,2)
+
+graph = Graph(vertices, edges, weights)
+nodes = graph.V #set

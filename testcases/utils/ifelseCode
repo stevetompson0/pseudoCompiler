@@ -1,0 +1,10 @@
+x = []
+y =len(x)
+z = ''
+
+if y < 0
+	z = 'impossible'
+else if y == 0
+	z = 'empty'
+else
+	z = 'non-empty'
