@@ -52,6 +52,10 @@ class formodule(basemodule):
 
         #start the loop
         for index, value in enumerate(self.loop_range):
+            #check end_recursive flag
+            if self.end_recursive:
+                break
+
             iterVarObj.var_obj = value
             iterVarObj.var_flag = glb.flag_dict['changed']
 

@@ -46,6 +46,9 @@ class whilemodule(basemodule):
         self.line = glb.current_line + 1
 
         while self._judge:
+            #check end_recursive flag
+            if self.end_recursive:
+                break
 
             recursive(self.content, 0, self)
 
